@@ -24,12 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     );
 
-    User.associate = function (models) {
-      User.hasMany(models.Address, {
-        as: "address",
-        foreignKey: "User_id",
-      });
-    };
+
 
     return User;
     }
