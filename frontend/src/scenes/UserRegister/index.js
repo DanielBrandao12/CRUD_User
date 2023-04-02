@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./UserRegister.css"
 import api from "../../services/api";
-
-
+import Header from "../../components/Header";
 function UserRegister() {
 
     const [name, setName] = useState()
@@ -27,10 +26,9 @@ function UserRegister() {
     }
     return (
         <>
-
-
+            <Header title={"Cadastre-se"} />
             <main>
-                <a href="">Voltar</a>
+
                 <div class="container-registerUser">
                     <h1>Cadastre-se</h1>
                     <form onSubmit={handleSubmit}>

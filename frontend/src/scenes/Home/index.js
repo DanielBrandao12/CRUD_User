@@ -1,36 +1,57 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import "./home.css";
-
+import Header from "../../components/Header";
 
 import api from "../../services/api";
 
 
 function Home() {
 
-    const [listAddress, setListAddress] = useState([]);
-    
-    useEffect(()=>{
+    const [listUsers, setListUsers] = useState([]);
 
-        async function getListAddress() {
+    useEffect(() => {
+
+        async function getListUsers() {
             //pegar id do usuario logado e passar como parametro para retornar os endereços do usurio.
-            const response = await api.get("/address/UserId/6")
-           setListAddress(response.data)
+            const response = await api.get("/user")
+            setListUsers(response.data)
         }
 
-        getListAddress()
+        getListUsers()
 
     }, []);
 
 
     return (
-        <div>
-            {
-                listAddress.map((address)=>(
-                    <p>{address.Rua}</p>
-                ))
-            }
-            
-        </div>
+        <>
+        <Header title={"Lista de usuários"}/>
+            <main >
+                <div>
+                    <h1 class="title">Lista de Usuários</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                listUsers.map((user) => (
+                                    <tr>
+                                        <td>{user.Nome}</td>
+                                        <td>{user.Email}</td>
+                                    </tr>
+
+                                ))
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+            </main>
+        
+        </>
     );
 }
 

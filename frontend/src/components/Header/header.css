@@ -8,5 +8,26 @@ header{
     background-color: #fff;
 }
 
+.titulo{
+    margin: 20px 30px;
+    color: #66BD4A;
+    font-size: 30px;
+    
+}
+nav{
+    display: flex;
+    position: absolute;
+    right: 30px;
+}
 
+ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+li a{
+    color: black;
+    text-decoration: none;
+}
 
