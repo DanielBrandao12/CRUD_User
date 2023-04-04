@@ -29,7 +29,7 @@ function UserRegister() {
             <Header title={"Cadastre-se"} />
             <main>
 
-                <div class="container-registerUser">
+                <div className="container-registerUser">
                     <h1>Cadastre-se</h1>
                     <form onSubmit={handleSubmit}>
 

@@ -27,7 +27,7 @@ function Home() {
         <Header title={"Lista de usuários"}/>
             <main >
                 <div>
-                    <h1 class="title">Lista de Usuários</h1>
+                    <h1 className="title">Lista de Usuários</h1>
                     <table>
                         <thead>
                             <tr>
@@ -38,7 +38,7 @@ function Home() {
                         <tbody>
                             {
                                 listUsers.map((user) => (
-                                    <tr>
+                                    <tr key={user.Id}>
                                         <td>{user.Nome}</td>
                                         <td>{user.Email}</td>
                                     </tr>

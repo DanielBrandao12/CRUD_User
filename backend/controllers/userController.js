@@ -1,5 +1,5 @@
 const database = require("../database/models");
-
+const jwt = require('jsonwebtoken')
 
 function getUsers(req, res){
   
@@ -53,10 +53,36 @@ function createUser(req, res) {// Criar ou alterar - Validações são obrigató
     res.redirect('/user');
   }
 
+
+  function login(req, res){
+
+      const {email, password} = req.body
+
+      database.User.findOne({
+        where: {
+          Email: email,
+          Senha: password
+        }
+      }).then((data) =>{
+        if(!data){
+          return res.status(401).json({ error: "Credenciais inválidas" });
+        }
+
+        const token = jwt.sign({
+          Id: data.dataValues.Id,
+          Nome: data.dataValues.Nome,
+          Email: data.dataValues.Email
+        }, "MinhaChaveSecreta")
+
+        return res.json({token})
+      })
+
+  }
   module.exports = {
     createUser,
     getUserById,
     getUsers,
     deleteUser,
-    updateUser
+    updateUser,
+    login
   }
