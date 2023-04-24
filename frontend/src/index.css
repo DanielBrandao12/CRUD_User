@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #66BD4A;
+  font-family: Arial, Helvetica, sans-serif;
+
+ 
+}
+
+.container-registerUser, .container{
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+
+  background-color: #fff;
+  box-shadow: #4a7547 0px 0px 3px 3px;
+}
+
+.fom-user-register, .form-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+input{
+  font-size: 16px;
+  width: 300px;
+  height: 50px;
+
+  background-color:#e2e2e2;
+  border-style: none;
+  padding-left: 5px;
+  outline-color: #66BD4A;
+
+}
+
+button{
+  width: 305px;
+  height: 50px;
+  background-color: #00B241;
+  border-style: none;
+  font-size: 18px;
+  color: #fff;
+  
+}
+
+button:hover{
+  background-color:  #66BD4A;
+}
+a{
+  color: #66BD4A;
+  text-decoration: none;
+}

@@ -31,7 +31,7 @@ function UserRegister() {
 
                 <div className="container-registerUser">
                     <h1>Cadastre-se</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form className="fom-user-register" onSubmit={handleSubmit}>
 
                         <input
                             type="text"
